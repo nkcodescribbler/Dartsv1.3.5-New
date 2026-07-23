@@ -1,0 +1,43 @@
+{
+  "task_id": 119,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Facing compile time issue and output log is below, fix the issue, endue error free code.\n\nRebuild started at 13:11...\nRestored C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Model\\SpecToCode1.Model.csproj (in 1.35 sec).\n1>------ Rebuild All started: Project: SpecToCode1.Model, Configuration: Debug Any CPU ------\nRestored C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Presentation\\SpecToCode1.Presentation.csproj (in 1.42 sec).\nRestored C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Data\\SpecToCode1.Data.csproj (in 1.42 sec).\nRestored C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Services\\SpecToCode1.Services.csproj (in 1.42 sec).\n1>  SpecToCode1.Model -> C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Model\\bin\\Debug\\net8.0\\SpecToCode1.Model.dll\n2>------ Rebuild All started: Project: SpecToCode1.Data, Configuration: Debug Any CPU ------\n2>  SpecToCode1.Data -> C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Data\\bin\\Debug\\net8.0\\SpecToCode1.Data.dll\n3>------ Rebuild All started: Project: SpecToCode1.Services, Configuration: Debug Any CPU ------\n3>  SpecToCode1.Services -> C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Services\\bin\\Debug\\net8.0\\SpecToCode1.Services.dll\n4>------ Rebuild All started: Project: SpecToCode1.Presentation, Configuration: Debug Any CPU ------\n4>C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Presentation\\Controllers\\AccountController.cs(40,30,40,34): error CS1503: Argument 1: cannot convert from 'SpecToCode1.Model.UserDto' to 'SpecToCode1.Model.Person'\n4>C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Presentation\\Controllers\\AccountController.cs(69,30,69,34): error CS1503: Argument 1: cannot convert from 'SpecToCode1.Model.UserDto' to 'SpecToCode1.Model.Person'\n========== Rebuild All: 3 succeeded, 1 failed, 0 skipped ==========\n========== Rebuild completed at 13:12 and took 07.716 seconds ==========\n",
+  "generated_at": "2026-07-09T07:45:08.254Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Facing compile time issue and output log is below, fix the issue, endue error free code.\n\nRebuild started at 13:11...\nRestored C:\\DARTS-development-environment\\sandbox\\kethare\\Greenfield-With same refined prompt  v1.3.5\\SpecToCode1.Model\\SpecToCode1.Model.csproj (in 1.35 sec).\n1>------ Rebuild All started: Project: SpecToCode1.Model, Configuration: Debug Any CPU ------\nRestored C:\\DARTS-developmen",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix AccountController type mismatch",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Presentation/Controllers/AccountController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Facing compile time issue and output log is below, fix th..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "not_run"
+  }
+}

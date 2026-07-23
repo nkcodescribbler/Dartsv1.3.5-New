@@ -1,0 +1,48 @@
+{
+  "task_id": 116,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Build the MVC components in SpecToCode1.Presentation. Create the AccountController with associated ViewModels and Razor views for user registration and login. Protect the Home page using [Authorize]. Update the shared layout to reflect the user's authentication state.\n\nAcceptance Criteria:\n- AccountController exists with Login and Register actions.\n- HomeController or the default landing page is protected by the [Authorize] attribute.\n- Login and Register views use Bootstrap 5 styling and jQuery Unobtrusive Validation.\n- _Layout.cshtml shows 'Home' and 'Logout' for logged-in users, and 'Login/Register' for guests.\n\nTechnical Hints: Use ASP.NET Core Identity-like flows with manual cookie signing if not using full Identity, or use Claims-based identity as required by the 'fully functional cookie-based authentication' spec.\n\nDependencies: Task Configure Web Infrastructure and Auth",
+  "generated_at": "2026-07-09T07:20:31.376Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Build the MVC components in SpecToCode1.Presentation. Create the AccountController with associated ViewModels and Razor views for user registration and login. Protect the Home page using [Authorize]. Update the shared layout to reflect the user's authentication state.\n\nAcceptance Criteria:\n- AccountController exists with Login and Register actions.\n- HomeController or the default landing page is p",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create MVC Views and Layout",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Presentation/Views/_ViewImports.cshtml",
+        "SpecToCode1.Presentation/Views/_ViewStart.cshtml",
+        "SpecToCode1.Presentation/Views/Shared/_Layout.cshtml",
+        "SpecToCode1.Presentation/Views/Account/Login.cshtml",
+        "SpecToCode1.Presentation/Views/Account/Register.cshtml",
+        "SpecToCode1.Presentation/Views/Home/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Build the MVC components in SpecToCode1.Presentation. Cre..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 6,
+    "validation_status": "not_run"
+  }
+}

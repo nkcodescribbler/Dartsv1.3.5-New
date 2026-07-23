@@ -1,0 +1,135 @@
+@model SpecToCode1.Model.ViewModels.ProfileViewModel
+
+@{ 
+    ViewData["Title"] = "Profile Information";
+}
+
+<h2>Profile Information</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Basic Info</h4>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input asp-for="Username" class="form-control" readonly />
+                <input type="hidden" asp-for="Username" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" readonly />
+                <input type="hidden" asp-for="FirstName" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" readonly />
+                <input type="hidden" asp-for="LastName" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="DOB" class="form-label"></label>
+                <input asp-for="DOB" class="form-control" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactNumber" class="form-label"></label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h4>Permanent Address</h4>
+            <div class="mb-3">
+                <label asp-for="PermanentAddress.AddressLine1" class="form-label"></label>
+                <input asp-for="PermanentAddress.AddressLine1" id="perm_addr1" class="form-control" />
+                <span asp-validation-for="PermanentAddress.AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PermanentAddress.AddressLine2" class="form-label"></label>
+                <input asp-for="PermanentAddress.AddressLine2" id="perm_addr2" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="PermanentAddress.City" class="form-label"></label>
+                <input asp-for="PermanentAddress.City" id="perm_city" class="form-control" />
+                <span asp-validation-for="PermanentAddress.City" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PermanentAddress.State" class="form-label"></label>
+                <input asp-for="PermanentAddress.State" id="perm_state" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="PermanentAddress.Zipcode" class="form-label"></label>
+                <input asp-for="PermanentAddress.Zipcode" id="perm_zip" class="form-control" />
+                <span asp-validation-for="PermanentAddress.Zipcode" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h4>Communication Address</h4>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="chkSameAsPermanent">
+                <label class="form-check-label" for="chkSameAsPermanent">
+                    Same as Permanent Address
+                </label>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CommunicationAddress.AddressLine1" class="form-label"></label>
+                <input asp-for="CommunicationAddress.AddressLine1" id="comm_addr1" class="form-control" />
+                <span asp-validation-for="CommunicationAddress.AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CommunicationAddress.AddressLine2" class="form-label"></label>
+                <input asp-for="CommunicationAddress.AddressLine2" id="comm_addr2" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="CommunicationAddress.City" class="form-label"></label>
+                <input asp-for="CommunicationAddress.City" id="comm_city" class="form-control" />
+                <span asp-validation-for="CommunicationAddress.City" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CommunicationAddress.State" class="form-label"></label>
+                <input asp-for="CommunicationAddress.State" id="comm_state" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="CommunicationAddress.Zipcode" class="form-label"></label>
+                <input asp-for="CommunicationAddress.Zipcode" id="comm_zip" class="form-control" />
+                <span asp-validation-for="CommunicationAddress.Zipcode" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Save Profile</button>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('chkSameAsPermanent').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('comm_addr1').value = document.getElementById('perm_addr1').value;
+                document.getElementById('comm_addr2').value = document.getElementById('perm_addr2').value;
+                document.getElementById('comm_city').value = document.getElementById('perm_city').value;
+                document.getElementById('comm_state').value = document.getElementById('perm_state').value;
+                document.getElementById('comm_zip').value = document.getElementById('perm_zip').value;
+            }
+        });
+
+        // Update values if permanent address changes while checkbox is checked
+        ['perm_addr1', 'perm_addr2', 'perm_city', 'perm_state', 'perm_zip'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                if (document.getElementById('chkSameAsPermanent').checked) {
+                    let commId = id.replace('perm_', 'comm_');
+                    document.getElementById(commId).value = this.value;
+                }
+            });
+        });
+    </script>
+}

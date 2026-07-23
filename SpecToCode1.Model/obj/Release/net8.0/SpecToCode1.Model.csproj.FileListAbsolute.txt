@@ -1,0 +1,11 @@
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\bin\Release\net8.0\SpecToCode1.Model.deps.json
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\bin\Release\net8.0\SpecToCode1.Model.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\bin\Release\net8.0\SpecToCode1.Model.pdb
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\SpecToCode1.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\SpecToCode1.Model.AssemblyInfoInputs.cache
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\SpecToCode1.Model.AssemblyInfo.cs
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\SpecToCode1.Model.csproj.CoreCompileInputs.cache
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\SpecToCode1.Model.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\refint\SpecToCode1.Model.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\SpecToCode1.Model.pdb
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Model\obj\Release\net8.0\ref\SpecToCode1.Model.dll

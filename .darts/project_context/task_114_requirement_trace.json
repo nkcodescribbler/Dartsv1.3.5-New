@@ -1,0 +1,41 @@
+{
+  "task_id": 114,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement the business logic for user management in the SpecToCode1.Services project. Create IAccountService and its implementation to handle registration (with unique username check) and login (with credential verification and LastLogin timestamp updates).\n\nAcceptance Criteria:\n- IAccountService and AccountService are implemented in the Services project.\n- RegisterUserAsync validates that usernames are unique.\n- LoginUserAsync verifies credentials and updates the LastLogin field in the database.\n- Service methods return DTOs rather than raw entities.\n\nDependencies: Task Implement Data Layer and Migrations",
+  "generated_at": "2026-07-09T07:11:02.760Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement the business logic for user management in the SpecToCode1.Services project. Create IAccountService and its implementation to handle registration (with unique username check) and login (with credential verification and LastLogin timestamp updates).\n\nAcceptance Criteria:\n- IAccountService and AccountService are implemented in the Services project.\n- RegisterUserAsync validates that usernam",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Verify and/or Implement Account Service",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the business logic for user management in the S..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "task_id": 118,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Consolidated Prompt: Implement \"Profile Information\" Module (v2.0)\nObjective: Extend the \"chattocode1\" ASP.NET Core 8.0 solution to include a secure \"Profile Information\" module. This task covers database schema updates, service implementation, and a responsive UI with strict validation and interactive features.\n\n1. Security & Identity Foundation (CRITICAL)\nUpdate Account Flow: Ensure the AccountController (Login and Register methods) includes ClaimTypes.NameIdentifier in the ClaimsIdentity, mapped to the user's integer Id from the database.\nAutomatic Login: Upon successful registration, the user must be automatically signed in with the correct claims before redirecting to the Home page.\n2. Data Architecture (chattocode1.Model & chattocode1.Data)\nExtend Person Entity: Add DOB (DateTime?) and ContactNumber (string?).\nAddress Entity: Create an Address entity with: Id, PersonId, AddressType (Enum: Permanent, Communication), AddressLine1, AddressLine2, City, State, and Zipcode.\nDatabase Constraints: Use Fluent API in ApplicationDbContext. AddressLine1, City, and Zipcode must be Required (NOT NULL).\nRelationships: Configure a One-to-Many relationship between Person and Address.\nMigration: Generate a migration named AddProfileModule and ensure Program.cs is configured to run context.Database.Migrate() on startup.\n3. Shared ViewModels (chattocode1.Model)\nLocation: Place all ViewModels in chattocode1.Model/ViewModels to prevent circular dependencies between Services and Presentation.\nProfileViewModel:\nFirstName, LastName, Username: Include these as Read-only properties (no set logic) for display purposes.\nDOB, ContactNumber: Marked as [Required].\nPermanentAddress, CommunicationAddress: Nested AddressViewModel objects.\nAddressViewModel:\nRequired fields: AddressLine1, City, Zipcode.\n4. Business Logic (chattocode1.Services)\nIProfileService: Define GetProfileAsync(int userId) and UpdateProfileAsync(ProfileViewModel model, int userId).\nImplementation: UpdateProfileAsync must handle Upsert logic (Update existing or Create new) for both address types. Use an IDbContextTransaction to ensure the entire update (Person + Addresses) is atomic.\n5. UI & Presentation (chattocode1.Presentation)\nProfileController:\nSecure with [Authorize].\nImplement a robust GetUserId() method that checks for ClaimTypes.NameIdentifier.\nSelf-Healing Session: If the user is authenticated but the ID claim is missing (old cookie), the controller must automatically sign the user out and redirect to Login to refresh the session.\nRazor View (Views/Profile/Index.cshtml):\nFields: Use the readonly HTML attribute for FirstName, LastName, and Username.\nValidation: Use <span asp-validation-for=\"...\" class=\"text-danger\"></span> for all required fields.\nInteractive JS: Implement a \"Same as Permanent Address\" checkbox. Use vanilla JavaScript to instantly copy values from Permanent fields to Communication fields when checked.\nLayout: Add a \"Profile\" link to the _Layout.cshtml navigation bar, visible only to authenticated users.\nAcceptance Criteria:\n\nBuilds Successfully: Zero circular dependencies (Presentation -> Services -> Data -> Model).\nNo Runtime Exceptions: Navigating to /Profile while logged in must load the data without \"Claim not found\" errors.\nData Integrity: Saving the profile updates both the Persons and Addresses tables correctly in one transaction.\nClient-Side UX: Validation triggers red error messages immediately, and the Address Copy JS works without page refreshes.",
+  "generated_at": "2026-07-09T07:40:28.024Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Consolidated Prompt: Implement \"Profile Information\" Module (v2.0)\nObjective: Extend the \"chattocode1\" ASP.NET Core 8.0 solution to include a secure \"Profile Information\" module. This task covers database schema updates, service implementation, and a responsive UI with strict validation and interactive features.\n\n1. Security & Identity Foundation (CRITICAL)\nUpdate Account Flow: Ensure the AccountC",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Models, Data, and ViewModels",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/AddressType.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Model/ViewModels/AddressViewModel.cs",
+        "SpecToCode1.Model/ViewModels/ProfileViewModel.cs",
+        "SpecToCode1.Services/IProfileService.cs",
+        "SpecToCode1.Services/ProfileService.cs",
+        "SpecToCode1.Presentation/Controllers/AccountController.cs",
+        "SpecToCode1.Presentation/Controllers/ProfileController.cs",
+        "SpecToCode1.Presentation/Views/Profile/Index.cshtml",
+        "SpecToCode1.Presentation/Program.cs",
+        "SpecToCode1.Presentation/Views/Shared/_Layout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Consolidated Prompt: Implement \"Profile Information\" Modu..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Business Logic and Services",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/AddressType.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Model/ViewModels/AddressViewModel.cs",
+        "SpecToCode1.Model/ViewModels/ProfileViewModel.cs",
+        "SpecToCode1.Services/IProfileService.cs",
+        "SpecToCode1.Services/ProfileService.cs",
+        "SpecToCode1.Presentation/Controllers/AccountController.cs",
+        "SpecToCode1.Presentation/Controllers/ProfileController.cs",
+        "SpecToCode1.Presentation/Views/Profile/Index.cshtml",
+        "SpecToCode1.Presentation/Program.cs",
+        "SpecToCode1.Presentation/Views/Shared/_Layout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Consolidated Prompt: Implement \"Profile Information\" Modu..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Account Controller Security & Identity",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/AddressType.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Model/ViewModels/AddressViewModel.cs",
+        "SpecToCode1.Model/ViewModels/ProfileViewModel.cs",
+        "SpecToCode1.Services/IProfileService.cs",
+        "SpecToCode1.Services/ProfileService.cs",
+        "SpecToCode1.Presentation/Controllers/AccountController.cs",
+        "SpecToCode1.Presentation/Controllers/ProfileController.cs",
+        "SpecToCode1.Presentation/Views/Profile/Index.cshtml",
+        "SpecToCode1.Presentation/Program.cs",
+        "SpecToCode1.Presentation/Views/Shared/_Layout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Consolidated Prompt: Implement \"Profile Information\" Modu..."
+    },
+    {
+      "task_id": "T-004",
+      "name": "UI, Presentation and Wiring",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/AddressType.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Model/ViewModels/AddressViewModel.cs",
+        "SpecToCode1.Model/ViewModels/ProfileViewModel.cs",
+        "SpecToCode1.Services/IProfileService.cs",
+        "SpecToCode1.Services/ProfileService.cs",
+        "SpecToCode1.Presentation/Controllers/AccountController.cs",
+        "SpecToCode1.Presentation/Controllers/ProfileController.cs",
+        "SpecToCode1.Presentation/Views/Profile/Index.cshtml",
+        "SpecToCode1.Presentation/Program.cs",
+        "SpecToCode1.Presentation/Views/Shared/_Layout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Consolidated Prompt: Implement \"Profile Information\" Modu..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 4,
+    "tasks_failed": 0,
+    "files_written": 14,
+    "validation_status": "not_run"
+  }
+}

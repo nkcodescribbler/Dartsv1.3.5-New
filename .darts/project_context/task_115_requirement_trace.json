@@ -1,0 +1,41 @@
+{
+  "task_id": 115,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Configure the SpecToCode1.Presentation project's Program.cs. Set up the exact SQLEXPRESS connection string in appsettings.json. Implement cookie-based authentication and a startup routine that calls context.Database.Migrate() to ensure the database is initialized automatically.\n\nAcceptance Criteria:\n- Cookie authentication is configured in Program.cs with LoginPath set to '/Account/Login'.\n- The connection string matches: 'Server=localhost\\\\SQLEXPRESS;Database=SpecToCode1;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;'\n- Database migrations are automatically applied on application startup.\n\nDependencies: Task Implement Account Service Business Logic",
+  "generated_at": "2026-07-09T07:18:44.978Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Configure the SpecToCode1.Presentation project's Program.cs. Set up the exact SQLEXPRESS connection string in appsettings.json. Implement cookie-based authentication and a startup routine that calls context.Database.Migrate() to ensure the database is initialized automatically.\n\nAcceptance Criteria:\n- Cookie authentication is configured in Program.cs with LoginPath set to '/Account/Login'.\n- The c",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Configure the SpecToCode1.Presentation project's Program.cs. Set up the exact SQ"
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

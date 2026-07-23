@@ -1,0 +1,45 @@
+{
+  "task_id": 113,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "In the SpecToCode1.Data project, implement the ApplicationDbContext. Use IEntityTypeConfiguration<Person> to map the Person entity to the database, ensuring the Username field is unique. Generate the 'InitialCreate' migration.\n\nAcceptance Criteria:\n- DbContext is implemented with Person entity configuration.\n- Fluent API is used in IEntityTypeConfiguration<Person> to enforce schema constraints (e.g., unique Username).\n- The project contains an 'InitialCreate' migration file.\n\nTechnical Hints: Ensure Microsoft.EntityFrameworkCore.SqlServer and Microsoft.EntityFrameworkCore.Design are installed. Use 'dotnet ef migrations add InitialCreate' from the Data project directory.\n\nDependencies: Task Define Domain Model and DTOs",
+  "generated_at": "2026-07-09T07:09:13.199Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "In the SpecToCode1.Data project, implement the ApplicationDbContext. Use IEntityTypeConfiguration<Person> to map the Person entity to the database, ensuring the Username field is unique. Generate the 'InitialCreate' migration.\n\nAcceptance Criteria:\n- DbContext is implemented with Person entity configuration.\n- Fluent API is used in IEntityTypeConfiguration<Person> to enforce schema constraints (e.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create Initial Migration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Data/Migrations/20231027000000_InitialCreate.cs",
+        "SpecToCode1.Data/Migrations/20231027000000_InitialCreate.Designer.cs",
+        "SpecToCode1.Data/Migrations/ApplicationDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "In the SpecToCode1.Data project, implement the Applicatio..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "not_run"
+  }
+}

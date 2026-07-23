@@ -1,0 +1,78 @@
+{
+  "task_id": 111,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Create a new .NET 8.0 solution named 'SpecToCode1' with the specified four projects. Ensure correct project types (MVC for Presentation, Class Library for others) and establish the required references between them.\n\nAcceptance Criteria:\n- The solution contains 4 projects targeting .NET 8.0: SpecToCode1.Presentation, SpecToCode1.Services, SpecToCode1.Data, and SpecToCode1.Model.\n- Project references are correctly set: Presentation -> Services, Services -> Data, Data -> Model, and Presentation -> Data.\n\nTechnical Hints: Use 'dotnet new sln', 'dotnet new mvc', and 'dotnet new classlib' commands. Establish references using 'dotnet add reference'.",
+  "generated_at": "2026-07-09T06:53:31.944Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Create a new .NET 8.0 solution named 'SpecToCode1' with the specified four projects. Ensure correct project types (MVC for Presentation, Class Library for others) and establish the required references between them.\n\nAcceptance Criteria:\n- The solution contains 4 projects targeting .NET 8.0: SpecToCode1.Presentation, SpecToCode1.Services, SpecToCode1.Data, and SpecToCode1.Model.\n- Project reference",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create Solution and Projects",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.sln",
+        "SpecToCode1.Model/SpecToCode1.Model.csproj",
+        "SpecToCode1.Data/SpecToCode1.Data.csproj",
+        "SpecToCode1.Services/SpecToCode1.Services.csproj",
+        "SpecToCode1.Presentation/SpecToCode1.Presentation.csproj",
+        "SpecToCode1.Data/SpecToCode1.Data.csproj",
+        "SpecToCode1.Services/SpecToCode1.Services.csproj",
+        "SpecToCode1.Presentation/SpecToCode1.Presentation.csproj"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create a new .NET 8.0 solution named 'SpecToCode1' with t...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Establish Project References",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.sln",
+        "SpecToCode1.Model/SpecToCode1.Model.csproj",
+        "SpecToCode1.Data/SpecToCode1.Data.csproj",
+        "SpecToCode1.Services/SpecToCode1.Services.csproj",
+        "SpecToCode1.Presentation/SpecToCode1.Presentation.csproj",
+        "SpecToCode1.Data/SpecToCode1.Data.csproj",
+        "SpecToCode1.Services/SpecToCode1.Services.csproj",
+        "SpecToCode1.Presentation/SpecToCode1.Presentation.csproj"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create a new .NET 8.0 solution named 'SpecToCode1' with t...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 8,
+    "validation_status": "passed"
+  }
+}

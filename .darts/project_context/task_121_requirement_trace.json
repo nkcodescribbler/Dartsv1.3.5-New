@@ -1,0 +1,58 @@
+{
+  "task_id": 121,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Fix the migration issue I am facing runtime exception while navigate to \"Profile\" menu.",
+  "generated_at": "2026-07-10T07:31:40.898Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Fix the migration issue I am facing runtime exception while navigate to \"Profile\" menu.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix ProfileViewModel property accessibility",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/ViewModels/ProfileViewModel.cs",
+        "SpecToCode1.Presentation/Views/Profile/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Fix the migration issue I am facing runtime exception whi..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Fix Profile View binding and fields",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/ViewModels/ProfileViewModel.cs",
+        "SpecToCode1.Presentation/Views/Profile/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Fix the migration issue I am facing runtime exception whi..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 2,
+    "validation_status": "not_run"
+  }
+}

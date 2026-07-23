@@ -1,0 +1,17 @@
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Services.deps.json
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Services.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Services.pdb
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Data.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Model.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Data.pdb
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\bin\Debug\net8.0\SpecToCode1.Model.pdb
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.csproj.AssemblyReference.cache
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.AssemblyInfoInputs.cache
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.AssemblyInfo.cs
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.csproj.CoreCompileInputs.cache
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCo.38C7899B.Up2Date
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\refint\SpecToCode1.Services.dll
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\SpecToCode1.Services.pdb
+C:\DARTS-development-environment\sandbox\kethare\Greenfield-With same refined prompt  v1.3.5\SpecToCode1.Services\obj\Debug\net8.0\ref\SpecToCode1.Services.dll

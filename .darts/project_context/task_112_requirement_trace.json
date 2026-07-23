@@ -1,0 +1,64 @@
+{
+  "task_id": 112,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "In the SpecToCode1.Model project, create the Person entity and DTOs. The Person entity must include the following fields: Id (int), Username (string, max 100), Password (string, max 100), FirstName (string, max 100), LastName (string, max 100), and LastLogin (DateTime?). Create UserDto, LoginDto, and RegisterDto for data transfer.\n\nAcceptance Criteria:\n- The Person entity includes: Id (int, PK), Username (nvarchar 100, unique), Password (nvarchar 100), FirstName (nvarchar 100), LastName (nvarchar 100), and LastLogin (DateTime, Nullable).\n- DTOs UserDto, LoginDto, and RegisterDto are created with relevant fields.\n\nDependencies: Task Setup Solution and Project Structure",
+  "generated_at": "2026-07-09T07:07:55.204Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "In the SpecToCode1.Model project, create the Person entity and DTOs. The Person entity must include the following fields: Id (int), Username (string, max 100), Password (string, max 100), FirstName (string, max 100), LastName (string, max 100), and LastLogin (DateTime?). Create UserDto, LoginDto, and RegisterDto for data transfer.\n\nAcceptance Criteria:\n- The Person entity includes: Id (int, PK), U",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create Person Entity and DTOs",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Model/UserDto.cs",
+        "SpecToCode1.Model/LoginDto.cs",
+        "SpecToCode1.Model/RegisterDto.cs",
+        "SpecToCode1.Data/Configurations/PersonConfiguration.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "In the SpecToCode1.Model project, create the Person entit..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Configure Person Entity mapping",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Model/UserDto.cs",
+        "SpecToCode1.Model/LoginDto.cs",
+        "SpecToCode1.Model/RegisterDto.cs",
+        "SpecToCode1.Data/Configurations/PersonConfiguration.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "In the SpecToCode1.Model project, create the Person entit..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "not_run"
+  }
+}

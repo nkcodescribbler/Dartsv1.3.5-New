@@ -1,0 +1,84 @@
+{
+  "task_id": 120,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "\"Migration not applied for '\"Profile Information\" Module'\". Address table is not created and added columns not reflected in 'Person' table. Fix the issue\n\nAn unhandled exception occurred while processing the request.\nSqlException: Invalid column name 'ContactNumber'.\nInvalid column name 'DOB'.\nMicrosoft.Data.SqlClient.SqlCommand+<>c.<ExecuteDbDataReaderAsync>b__209_0(Task<SqlDataReader> result)\n\nStack Query Cookies Headers Routing\nSqlException: Invalid column name 'ContactNumber'. Invalid column name 'DOB'.\nMicrosoft.Data.SqlClient.SqlCommand+<>c.<ExecuteDbDataReaderAsync>b__209_0(Task<SqlDataReader> result)\nSystem.Threading.Tasks.ContinuationResultTaskFromResultTask<TAntecedentResult, TResult>.InnerInvoke()\nSystem.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, object state)\nSystem.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, object state)\nSystem.Threading.Tasks.Task.ExecuteWithThreadLocal(ref Task currentTaskSlot, Thread threadPoolThread)\nMicrosoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\nMicrosoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\nMicrosoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable<T>+AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\nMicrosoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync<TState, TResult>(TState state, Func<DbContext, TState, CancellationToken, Task<TResult>> operation, Func<DbContext, TState, CancellationToken, Task<ExecutionResult<TResult>>> verifySucceeded, CancellationToken cancellationToken)\nMicrosoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable<T>+AsyncEnumerator.MoveNextAsync()\nSystem.Runtime.CompilerServices.ConfiguredValueTaskAwaitable<TResult>+ConfiguredValueTaskAwaiter.GetResult()\nMicrosoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<TSource>(IAsyncEnumerable<TSource> asyncEnumerable, CancellationToken cancellationToken)\nMicrosoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<TSource>(IAsyncEnumerable<TSource> asyncEnumerable, CancellationToken cancellationToken)\nSpecToCode1.Services.ProfileService.GetProfileAsync(int userId) in ProfileService.cs\n+\n        var person = await _context.Persons\nSpecToCode1.Presentation.Controllers.ProfileController.Index() in ProfileController.cs\n+\n        var profile = await _profileService.GetProfileAsync(userId.Value);\nMicrosoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor+TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, object controller, object[] arguments)\nSystem.Threading.Tasks.ValueTask<TResult>.get_Result()\nMicrosoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask<IActionResult> actionResultValueTask)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, object state, bool isCompleted)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(ref State next, ref Scope scope, ref object state, ref bool isCompleted)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, object state, bool isCompleted)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, object state, bool isCompleted)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(ref State next, ref Scope scope, ref object state, ref bool isCompleted)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, object state, bool isCompleted)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\nMicrosoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\nMicrosoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)\nMicrosoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\nMicrosoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)",
+  "generated_at": "2026-07-09T08:00:31.450Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "\"Migration not applied for '\"Profile Information\" Module'\". Address table is not created and added columns not reflected in 'Person' table. Fix the issue\n\nAn unhandled exception occurred while processing the request.\nSqlException: Invalid column name 'ContactNumber'.\nInvalid column name 'DOB'.\nMicrosoft.Data.SqlClient.SqlCommand+<>c.<ExecuteDbDataReaderAsync>b__209_0(Task<SqlDataReader> result)\n\nS",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Update Models and Configurations",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Data/Configurations/PersonConfiguration.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/Migrations/20231027000001_AddProfileFields.cs",
+        "SpecToCode1.Data/Migrations/ApplicationDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "\"Migration not applied for '\"Profile Information\" Module'..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Manual Migration Script (Simulated)",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Data/Configurations/PersonConfiguration.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/Migrations/20231027000001_AddProfileFields.cs",
+        "SpecToCode1.Data/Migrations/ApplicationDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "\"Migration not applied for '\"Profile Information\" Module'..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Verify Service and Entry Point",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Model/Address.cs",
+        "SpecToCode1.Data/Configurations/PersonConfiguration.cs",
+        "SpecToCode1.Data/Configurations/AddressConfiguration.cs",
+        "SpecToCode1.Data/Migrations/20231027000001_AddProfileFields.cs",
+        "SpecToCode1.Data/Migrations/ApplicationDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "\"Migration not applied for '\"Profile Information\" Module'..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 6,
+    "validation_status": "not_run"
+  }
+}

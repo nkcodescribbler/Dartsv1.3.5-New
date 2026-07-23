@@ -28,4 +28,5 @@ public class Person
     public string? ContactNumber { get; set; }
 
     public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
+    public virtual ICollection<UserEducationHistory> EducationHistories { get; set; } = new List<UserEducationHistory>();
 }

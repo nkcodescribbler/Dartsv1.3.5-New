@@ -11,6 +11,7 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Person> Persons { get; set; }
     public DbSet<Address> Addresses { get; set; }
+    public DbSet<UserEducationHistory> UserEducationHistories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

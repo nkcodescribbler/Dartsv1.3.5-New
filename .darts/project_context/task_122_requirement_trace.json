@@ -1,0 +1,81 @@
+{
+  "task_id": 122,
+  "task_name": "Greenfield-With same refined prompt  v1.3.5",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Below is a refined prompt that you can use with ChatGPT, Claude, Cursor, GitHub Copilot Agent, or any AI coding assistant. It is explicit about the requirements, coding standards, and expected output.\n\n---\n\n## Prompt\n\nI need to implement a new feature in my ASP.NET Core application using **Entity Framework Core Code-First**.\n\n### Requirements\n\nCreate a new entity named **UserEducationHistory** and generate everything required using the Entity Framework Core Code-First approach.\n\n### Database Table\n\nCreate a table named:\n\n```text\nUserEducationHistory\n```\n\n### Columns\n\n| Column                  | Data Type     | Required | Notes                                                 |\n| ----------------------- | ------------- | -------- | ----------------------------------------------------- |\n| Id                      | int           | Yes      | Primary Key, Identity, Auto Increment starting from 1 |\n| EducationType           | nvarchar(150) | Yes      | Maximum length 150                                    |\n| InstitutionName         | nvarchar(150) | Yes      | Maximum length 150                                    |\n| InstitutionAddressLine1 | nvarchar(150) | Yes      | Maximum length 150                                    |\n| InstitutionAddressLine2 | nvarchar(150) | No       | Maximum length 150                                    |\n| InstitutionCity         | nvarchar(100) | Yes      | Maximum length 100                                    |\n| InstitutionState        | nvarchar(150) | No       | Maximum length 150                                    |\n| InstitutionPincode      | nvarchar(15)  | Yes      | Maximum length 15                                     |\n| UserId                  | int           | Yes      | Foreign Key referencing `Persons.Id`                  |\n\n> **Note:** Use the corrected spelling **Institution** instead of **Institusion** throughout the implementation.\n\n### Relationships\n\n* A `Person` can have multiple education history records.\n* `UserEducationHistory.UserId` is a required foreign key.\n* Configure the relationship using Fluent API.\n* Create the appropriate foreign key constraint.\n* Create an index on `UserId`.\n\n### Entity Configuration\n\nUse Entity Framework Core best practices.\n\nConfigure:\n\n* Table name\n* Primary key\n* Identity column\n* Required fields\n* Maximum lengths\n* Foreign key relationship\n* Index on `UserId`\n\nusing `IEntityTypeConfiguration<UserEducationHistory>`.\n\n### Migration\n\nGenerate the required Entity Framework Core migration.\n\nThe migration should:\n\n* Create the `UserEducationHistory` table.\n* Create the foreign key to `Persons.Id`.\n* Create the index on `UserId`.\n* Include the Down() method to drop the table.\n\n### Automatic Migration\n\nConfigure the application so that **all pending migrations are automatically applied during application startup**.\n\nThe application should execute:\n\n```csharp\ncontext.Database.Migrate();\n```\n\nduring startup (Program.cs) so that:\n\n* On first application run, pending migrations are automatically applied.\n* If the migration has already been applied, nothing should happen.\n* No manual database update command should be required.\n\n### Deliverables\n\nGenerate all required code:\n\n1. `UserEducationHistory` entity\n2. Navigation property updates in `Person`\n3. Fluent API configuration class\n4. `DbContext` registration\n5. Migration class\n6. Program.cs startup code for automatic migrations\n7. Any required dependency injection updates\n8. Folder/file locations where each file should be placed\n9. Ensure the implementation follows clean architecture and existing project conventions.\n\nUse .NET 8 / Entity Framework Core best practices and produce production-ready code with appropriate comments.\n",
+  "generated_at": "2026-07-23T13:16:55.768Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Below is a refined prompt that you can use with ChatGPT, Claude, Cursor, GitHub Copilot Agent, or any AI coding assistant. It is explicit about the requirements, coding standards, and expected output.\n\n---\n\n## Prompt\n\nI need to implement a new feature in my ASP.NET Core application using **Entity Framework Core Code-First**.\n\n### Requirements\n\nCreate a new entity named **UserEducationHistory** and",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Models, Configuration, and DbContext",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/UserEducationHistory.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/UserEducationHistoryConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Data/Migrations/20231027000002_AddUserEducationHistory.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Below is a refined prompt that you can use with ChatGPT, ..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Migration — Create UserEducationHistory Migration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/UserEducationHistory.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/UserEducationHistoryConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Data/Migrations/20231027000002_AddUserEducationHistory.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Below is a refined prompt that you can use with ChatGPT, ..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Entry points — Program.cs check for automatic migrations",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "SpecToCode1.Model/UserEducationHistory.cs",
+        "SpecToCode1.Model/Person.cs",
+        "SpecToCode1.Data/Configurations/UserEducationHistoryConfiguration.cs",
+        "SpecToCode1.Data/ApplicationDbContext.cs",
+        "SpecToCode1.Data/Migrations/20231027000002_AddUserEducationHistory.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Below is a refined prompt that you can use with ChatGPT, ..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "not_run"
+  }
+}

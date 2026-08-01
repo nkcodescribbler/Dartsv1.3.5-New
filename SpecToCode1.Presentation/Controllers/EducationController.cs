@@ -41,6 +41,7 @@ public class EducationController : Controller
 
         var viewModelList = educationList.Select(e => new EducationViewModel
         {
+            Id = e.Id,
             EducationType = e.EducationType,
             InstitutionName = e.InstitutionName,
             AddressLine1 = e.InstitutionAddressLine1,
@@ -98,6 +99,81 @@ public class EducationController : Controller
         await _educationService.CreateEducationAsync(education);
 
         TempData["SuccessMessage"] = "Education history added successfully.";
+        return RedirectToAction(nameof(Index));
+    }
+
+    /// <summary>
+    /// Displays the form to edit an existing education record.
+    /// </summary>
+    /// <param name="id">The ID of the education record to edit.</param>
+    /// <returns>The Edit view or a 403 Forbidden if not authorized.</returns>
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var userId = GetUserId();
+        if (userId == null)
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
+        var education = await _educationService.GetEducationByIdAsync(id, userId.Value);
+        if (education == null)
+        {
+            return Forbid();
+        }
+
+        var viewModel = new EducationViewModel
+        {
+            Id = education.Id,
+            EducationType = education.EducationType,
+            InstitutionName = education.InstitutionName,
+            AddressLine1 = education.InstitutionAddressLine1,
+            AddressLine2 = education.InstitutionAddressLine2,
+            City = education.InstitutionCity,
+            State = education.InstitutionState,
+            Pincode = education.InstitutionPincode
+        };
+
+        return View(viewModel);
+    }
+
+    /// <summary>
+    /// Handles the submission of the edited education record.
+    /// </summary>
+    /// <param name="model">The updated education view model.</param>
+    /// <returns>A redirect to the Index action on success, or the Edit view with errors on failure.</returns>
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(EducationViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        var userId = GetUserId();
+        if (userId == null)
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
+        var existingEducation = await _educationService.GetEducationByIdAsync(model.Id, userId.Value);
+        if (existingEducation == null)
+        {
+            return Forbid();
+        }
+
+        existingEducation.EducationType = model.EducationType;
+        existingEducation.InstitutionName = model.InstitutionName;
+        existingEducation.InstitutionAddressLine1 = model.AddressLine1;
+        existingEducation.InstitutionAddressLine2 = model.AddressLine2;
+        existingEducation.InstitutionCity = model.City;
+        existingEducation.InstitutionState = model.State;
+        existingEducation.InstitutionPincode = model.Pincode;
+
+        await _educationService.UpdateEducationAsync(existingEducation);
+
+        TempData["SuccessMessage"] = "Education history updated successfully.";
         return RedirectToAction(nameof(Index));
     }
 

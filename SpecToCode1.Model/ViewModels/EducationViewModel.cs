@@ -8,6 +8,11 @@ namespace SpecToCode1.Model.ViewModels;
 public class EducationViewModel
 {
     /// <summary>
+    /// The unique identifier for the education record.
+    /// </summary>
+    public int Id { get; set; }
+
+    /// <summary>
     /// The type of education (e.g., High School, Bachelor's, etc.).
     /// </summary>
     [Required(ErrorMessage = "Education Type is required.")]

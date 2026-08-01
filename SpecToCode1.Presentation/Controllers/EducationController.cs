@@ -178,6 +178,27 @@ public class EducationController : Controller
     }
 
     /// <summary>
+    /// Handles the deletion of an education record.
+    /// </summary>
+    /// <param name="id">The ID of the education record to delete.</param>
+    /// <returns>A redirect to the Index action.</returns>
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var userId = GetUserId();
+        if (userId == null)
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
+        await _educationService.DeleteEducationAsync(id, userId.Value);
+
+        TempData["SuccessMessage"] = "Education history deleted successfully.";
+        return RedirectToAction(nameof(Index));
+    }
+
+    /// <summary>
     /// Gets the Person ID of the currently authenticated user from claims.
     /// </summary>
     /// <returns>The user's ID or null if not found.</returns>

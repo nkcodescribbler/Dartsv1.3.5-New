@@ -32,7 +32,16 @@ public interface IEducationService
     /// <summary>
     /// Updates an existing education history record.
     /// </summary>
-    /// <param name="education">The education history record with updated values.</param>
+    /// <param name="education">The education history record with updated values.
+    /// </param>
     /// <returns>A task representing the asynchronous operation.</returns>
     Task UpdateEducationAsync(UserEducationHistory education);
+
+    /// <summary>
+    /// Deletes an education history record by ID and User ID for security.
+    /// </summary>
+    /// <param name="educationId">The ID of the education record.</param>
+    /// <param name="userId">The ID of the user (Person ID).</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    Task DeleteEducationAsync(int educationId, int userId);
 }

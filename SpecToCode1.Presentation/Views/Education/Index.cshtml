@@ -53,7 +53,12 @@
                             <td>@item.State</td>
                             <td>@item.Pincode</td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                <div class="btn-group" role="group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this education record?');" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger ms-1">Delete</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     }

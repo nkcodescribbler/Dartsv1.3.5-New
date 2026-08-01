@@ -53,7 +53,8 @@ public class EducationService : IEducationService
     public async Task CreateEducationAsync(UserEducationHistory education)
     {
         if (education == null)
-        {            throw new ArgumentNullException(nameof(education));
+        {
+            throw new ArgumentNullException(nameof(education));
         }
 
         TrimStrings(education);
@@ -65,18 +66,38 @@ public class EducationService : IEducationService
     /// <summary>
     /// Updates an existing education history record asynchronously.
     /// </summary>
-    /// <param name="education">The education history record with updated values.</param>
+    /// <param name="education">The education history record with updated values.
+    /// </param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public async Task UpdateEducationAsync(UserEducationHistory education)
     {
         if (education == null)
-        {            throw new ArgumentNullException(nameof(education));
+        {
+            throw new ArgumentNullException(nameof(education));
         }
 
         TrimStrings(education);
 
         _context.UserEducationHistories.Update(education);
         await _context.SaveChangesAsync();
+    }
+
+    /// <summary>
+    /// Deletes an education history record asynchronously.
+    /// </summary>
+    /// <param name="educationId">The ID of the education record.</param>
+    /// <param name="userId">The ID of the user (Person ID).</param>
+    /// <returns>A task representing the asynchronous operation.</returns>
+    public async Task DeleteEducationAsync(int educationId, int userId)
+    {
+        var education = await _context.UserEducationHistories
+            .FirstOrDefaultAsync(x => x.Id == educationId && x.UserId == userId);
+
+        if (education != null)
+        {
+            _context.UserEducationHistories.Remove(education);
+            await _context.SaveChangesAsync();
+        }
     }
 
     /// <summary>
